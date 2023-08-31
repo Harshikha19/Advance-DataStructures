@@ -2,36 +2,18 @@ import java.util.*;
 
 public class NQueues {
 
-    /**
-     * The array to store the elements of the queues.
-     */
+    
+    // The array to store the elements of the queues. 
     private int[] array;
-
-    /**
-     * The front pointers of the queues.
-     */
+    //The front pointers of the queues
     private int[] front;
-
-    /**
-     * The rear pointers of the queues.
-     */
+    // The rear pointers of the queues.
     private int[] rear;
-
-    /**
-     * The boundary of the array.
-     */
+    //The boundary of the array.
     private int[] boundary;
-
-    /**
-     * The number of queues.
-     */
+    //The number of queues.
     private int n;
 
-    /**
-     * Constructs a new NQueues object with the given capacity.
-     *
-     * @param n The capacity of the queues.
-     */
     public NQueues(int n) {
         this.array = new int[n];
         this.front = new int[n];
@@ -45,32 +27,15 @@ public class NQueues {
         this.n = n;
     }
 
-    /**
-     * Checks if the given queue is empty.
-     *
-     * @param queue The index of the queue.
-     * @return True if the queue is empty, false otherwise.
-     */
     public boolean isEmpty(int queue) {
         return front[queue] == -1;
     }
 
-    /**
-     * Checks if the given queue is full.
-     *
-     * @param queue The index of the queue.
-     * @return True if the queue is full, false otherwise.
-     */
     public boolean isFull(int queue) {
         return rear[queue] == boundary[queue];
     }
 
-    /**
-     * Enqueues an element to the given queue.
-     *
-     * @param queue The index of the queue.
-     * @param value The element to be enqueued.
-     */
+   
     public void enqueue(int queue, int value) {
         if (isFull(queue)) {
             throw new IllegalStateException("Queue is full");
@@ -80,12 +45,7 @@ public class NQueues {
         array[rear[queue]] = value;
     }
 
-    /**
-     * Dequeues an element from the given queue.
-     *
-     * @param queue The index of the queue.
-     * @return The element that was dequeued.
-     */
+  
     public int dequeue(int queue) {
         if (isEmpty(queue)) {
             throw new IllegalStateException("Queue is empty");
@@ -96,9 +56,7 @@ public class NQueues {
         return value;
     }
 
-    /**
-     * Prints the elements of the queues.
-     */
+    //Prints the elements of the queues.
     public void print() {
         for (int i = 0; i < n; i++) {
             System.out.println("Queue " + i + ":");
@@ -114,11 +72,6 @@ public class NQueues {
         }
     }
 
-    /**
-     * The main method.
-     *
-     * @param args The command-line arguments.
-     */
     public static void main(String[] args) {
         NQueues queues = new NQueues(3);
 
