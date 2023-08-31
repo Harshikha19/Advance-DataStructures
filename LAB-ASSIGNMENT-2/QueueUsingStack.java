@@ -37,4 +37,17 @@ class QueueUsingStacks {
     public boolean isEmpty() {
         return stack1.isEmpty() && stack2.isEmpty();
     }
+     public static void main(String[] args) {
+        StackUsingQueues stack = new StackUsingQueues();
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        System.out.println("The top element is: " + stack.peek());
+
+        stack.pop();
+
+        System.out.println("The top element is: " + stack.peek());
+    }
 }
