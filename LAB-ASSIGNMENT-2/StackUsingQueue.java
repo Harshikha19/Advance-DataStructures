@@ -42,4 +42,15 @@ public class StackUsingQueue {
     public boolean isEmpty() {
         return q1.isEmpty();
     }
+     public static void main(String[] args) {
+        StackUsingQueue stack = new StackUsingQueue();
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        System.out.println("The top element is: " + stack.peek());
+        System.out.println("Popping the top element: " + stack.pop());
+        System.out.println("The top element is: " + stack.peek());
+    }
 }
